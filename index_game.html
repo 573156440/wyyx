@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link type="text/css" rel="stylesheet" href="css/css.css">
+	<link type="text/css" rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			//顶部导航右侧按钮
+			$("#topOpen").click(function(){
+				if($(this).hasClass("open")){
+					$(this).removeClass("open");
+					$("#topNav").slideUp(300);
+				}
+				else{
+					$(this).addClass("open");
+					$("#topNav").slideDown(300);
+				}
+
+			});
+
+			$("#topClose").click(function(){
+				$("#topOpen").removeClass("open");
+				$("#topNav").slideUp(300);
+			})
+
+			//轮播图
+			$(".head-prev").mouseenter(function(){
+				$(".prev-box").show();
+			});
+			$(".head-prev").mouseleave(function(){
+				$(".prev-box").hide();
+			});
+			$(".head-next").mouseenter(function(){
+				$(".next-box").show();
+			});
+			$(".head-next").mouseleave(function(){
+				$(".next-box").hide();
+			});
+			var num = 0;
+			$(".head-box").eq(0).css({"display":"block","z-index":1,"opacity":1});
+			$(".head-next").click(function(){
+				++num > 4 ?  num = 0 : num;
+				$(".head-box").eq(num).css({"display":"block","z-index":1}).animate({"opacity":1},2000).siblings().css({"z-index":0}).animate({"opacity":0},2000);
+				setCircle();
+			});
+			function setCircle(){
+				var circle = $(".head-ctrl").children();
+				for(var i=0;i<5;i++){
+					circle[i].className ="";
+				}
+				circle[num].className = "cur";
+			}
+			$(".head-prev").click(function(){
+				--num < 0 ?  num = 4 : num;
+				$(".head-box").eq(num).css({"display":"block","z-index":1}).animate({"opacity":1},2000).siblings().css({"z-index":0}).animate({"opacity":0},2000)
+			});
+
+			var timer =null;
+			timer = setInterval(function(){
+				++num > 4 ?  num = 0 : num;
+				$(".head-box").eq(num).css({"display":"block","z-index":1}).animate({"opacity":1},2000).siblings().css({"z-index":0}).animate({"opacity":0},2000);
+				setCircle();
+			},3000)
+
+//13241087977
+//27102514
+//ice@wedn.net
+
+			//zepto
+			var cur = $(".ctrl").children();
+			for(var i=0;i<cur.length;i++){
+				cur[i].index = i;
+				cur[i].click(function(){
+					for(var j=0;j<cur.length;j++){
+
+					}
+					if(cur[i].hasClass("cur")){
+
+					}
+					else{
+						cur[i].addclass = "cur";
+
+					}
+				})
+			}
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 顶部nav 开始 -->
+		<div class="topBar">
+			<div class="topBox f-cb">
+				<a href="#" class="topLogo"></a>
+				<p class="topBoxlist">
+					<a href="#"> <i></i>
+						游戏，热爱才懂
+					</a>
+					<span>·</span>
+					<a href="#"> <i></i>
+						网易游戏App
+					</a>
+					<span>·</span>
+					<a href="#">
+						<i></i>
+						关于网易游戏
+					</a>
+					<span>·</span>
+					<a href="#">
+						<i></i>
+						人才招聘
+					</a>
+					<span>·</span>
+					<a href="#">
+						<i></i>
+						客服中心
+					</a>
+					<span>·</span>
+					<a href="#">
+						<i></i>
+						爱玩网
+					</a>
+				</p>
+
+				<a id="topOpen" href="javascript:;" class="topOpen f-turn">
+					<i></i>
+				</a>
+
+				<div id="topNav" class="topNav" style="display:none">
+					<p>
+						游戏列表
+						<span>
+							<i class="icon-H"></i>
+							热门游戏
+						</span>
+						<span>
+							<i class="icon-N"></i>
+							最新游戏
+						</span>
+					</p>
+					<!-- 游戏列表 开始 -->
+					<div class="nav-box-con nav-box-con1 f-cb">
+						<h2 class="nav-box-title"> <em>客户端游戏</em>
+						</h2>
+						<div class="nav-li-box nav-li-box1 f-cb">
+							<h2>角色扮演</h2>
+							<ul>
+								<li>
+									<a href="#">梦幻西游2</a> <em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">天下3</a>
+								</li>
+								<li>
+									<a href="#">新大话西游3</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">天谕</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">大话2免费版</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">西楚霸王</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">新大话3经典版</a>
+								</li>
+								<li>
+									<a href="#">新倩女幽魂</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">新大话3免费版</a>
+								</li>
+								<li>
+									<a href="#">镇魔曲</a>
+								</li>
+								<li>
+									<a href="#">大唐无双零</a>
+								</li>
+								<li>
+									<a href="#">龙剑</a>
+								</li>
+								<li>
+									<a href="#">武魂2</a>
+								</li>
+								<li>
+									<a href="#">精灵传说</a>
+								</li>
+								<li>
+									<a href="#">斩魂</a>
+								</li>
+								<li>
+									<a href="#">新飞飞</a>
+								</li>
+								<li>
+									<a href="#">魔兽世界</a>
+								</li>
+								<li>
+									<a href="#">暗黑破坏神3</a>
+								</li>
+							</ul>
+						</div>
+						<div class="nav-li-box nav-li-box2 f-cb">
+							<h2>竞技/休闲</h2>
+							<ul>
+								<li>
+									<a href="#">突击英雄</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">夺宝联盟</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">无尽战区</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">风暴英雄</a>
+								</li>
+								<li>
+									<a href="#">星际争霸2</a>
+								</li>
+								<li>
+									<a href="#">英雄三国</a>
+								</li>
+								<li>
+									<a href="#">炉石传说</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="nav-box-con nav-box-con2 f-cb">
+						<h2 class="nav-box-title">
+							<em>手机游戏</em>
+						</h2>
+						<div class="nav-li-box nav-li-box3 f-cb">
+							<h2>热门推荐</h2>
+							<ul>
+								<li>
+									<a href="#">梦幻西游手游</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">大话西游手游</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">乱斗西游2</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">功夫熊猫官方手游</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">天下HD</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">时空之刃</a>
+									<em class="icon-H"></em>
+								</li>
+								<li>
+									<a href="#">梦想星城</a>
+								</li>
+								<li>
+									<a href="#">白将行</a>
+								</li>
+								<li>
+									<a href="#">有杀气童话</a>
+								</li>
+								<li>
+									<a href="#">乖离性百万亚瑟王</a>
+								</li>
+								<li>
+									<a href="#">小时代官方游戏</a>
+								</li>
+								<li>
+									<a href="#">魔天记</a>
+								</li>
+								<li>
+									<a href="#">西游神魔决</a>
+								</li>
+								<li>
+									<a href="#">碎碎曲奇</a>
+								</li>
+								<li>
+									<a href="#">公主莫慌</a>
+								</li>
+								<li>
+									<a href="#">实况俱乐部</a>
+								</li>
+							</ul>
+						</div>
+						<div class="nav-li-box nav-li-box4 f-cb">
+							<h2>新品推荐</h2>
+							<ul style="width:576px">
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+									<em class="icon-N"></em>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+								<li>
+									<a href="#">Raven:掠夺者</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 游戏列表 结束 -->
+					<a id="topClose" class="closeNav">
+						<i></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="head-wrap">
+			<div class="head-pic">
+				<div class="head-box"  style="background:url(images/lun1);display:none; opacity:0">
+					<a href="#" class="header">
+						<div class="h-title left white">
+							<h2>网易创新弹射动作卡牌</h2>
+							<h3>《圣灵zero》今日首发</h3>
+							<p>
+								《圣灵Zero》是网易游戏出品的一款创新的弹射类卡牌手游，首次将弹射和卡牌相结合，结合自由控制布局及自由怒气技的设定，给玩家极具操作空间和策略空间的动作卡牌体验
+							</p>
+							<i></i>
+						</div>
+					</a>
+				</div>
+				<div class="head-box" style="background:url(images/lun2);display:none; opacity:0">
+					<a href="#" class="header">
+						<div class="h-title left">
+							<h2>网易创新弹射动作卡牌</h2>
+							<h3>《圣灵zero》今日首发</h3>
+							<p>
+								《圣灵Zero》是网易游戏出品的一款创新的弹射类卡牌手游，首次将弹射和卡牌相结合，结合自由控制布局及自由怒气技的设定，给玩家极具操作空间和策略空间的动作卡牌体验
+							</p>
+							<i></i>
+						</div>
+					</a>
+				</div>
+				<div class="head-box" style="background:url(images/lun3);display:none; opacity:0">
+					<a href="#" class="header">
+						<div class="h-title left">
+							<h2>网易创新弹射动作卡牌</h2>
+							<h3>《圣灵zero》今日首发</h3>
+							<p>
+								《圣灵Zero》是网易游戏出品的一款创新的弹射类卡牌手游，首次将弹射和卡牌相结合，结合自由控制布局及自由怒气技的设定，给玩家极具操作空间和策略空间的动作卡牌体验
+							</p>
+							<i></i>
+						</div>
+					</a>
+				</div>
+				<div class="head-box" style="background:url(images/lun4);display:none; opacity:0">
+					<a href="#" class="header">
+						<div class="h-title white right">
+							<h2>超燃3D动作MOBA</h2>
+							<h3>《无尽战区》破焰封测</h3>
+							<p>
+								《无尽战区》以未来科幻为题材，采用与传统MOBA迥异的TPS战斗视角，融合了格斗、射击、法术等多种战斗方式，打造了超燃团队竞技的游戏氛围。
+							</p>
+							<i></i>
+						</div>
+					</a>
+				</div>
+				<div class="head-box" style="background:url(images/lun5);display:none; opacity:0">
+					<a href="#" class="header">
+						<div class="h-title white right">
+							<h2>超燃3D动作MOBA</h2>
+							<h3>《无尽战区》破焰封测</h3>
+							<p>
+								《无尽战区》以未来科幻为题材，采用与传统MOBA迥异的TPS战斗视角，融合了格斗、射击、法术等多种战斗方式，打造了超燃团队竞技的游戏氛围。
+							</p>
+							<i></i>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="head-ctrl-box">
+				<p class="head-ctrl">
+					<a href="javascript:;" class="cur"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+					<a href="javascript:;"></a>
+				</p>
+			</div>
+			<a href="javascript:;" class="head-prev head-sel">
+				<i></i>
+				<div class="prev-box sel-box">
+					<img src="images/2015-09-24_663935.jpg">
+					<h2>网易创新弹射动作卡牌</h2>
+					<p>《圣灵zero》今日首发</p>
+				</div>
+			</a>
+			<a href="javascript:;" class="head-next head-sel">
+				<i></i>
+				<div class="next-box sel-box">
+					<img src="images/c936802b-67fe-419b-881b-c913609d90d5">
+					<h2>超燃3D动作MOBA</h2>
+					<p>《无尽战区》破焰封测</p>
+				</div>
+			</a>
+		</div>
+		<div class="con-wrap con-wrap1">
+			<div class="con-box f-cb">
+				<div class="g-banBox mod-box1 f-cb">
+					<div class="ctrl-box">
+						<p class="ctrl-mon">DEC</p>
+						<h1 class="ctrl-mon-mun">12</h1>
+						<i></i>
+						<p class="ctrl-title">游戏动态</p>
+						<div class="ctrl">
+							<a href="javascript:;" class="cur"></a>
+							<a href="javascript:;"></a>
+						</div>
+					</div>
+					<div class="carouselwrap">
+						<div class="carouse-box" style="left:100%">
+
+							<div class="carouse-con">
+								<div class="car-bg-img" style="background-image: url(images/small_);"></div>
+								<a href="#" target="_blank" class="jk_btn" id="jk_507469">
+									<em class="bg-font f-turn"></em>
+									<em class="bg-font-top f-turn"></em>
+									<span class="txt1">《圣灵Zero》今日首发</span>
+									<span class="txt2">网易创新弹射动作卡牌今日AppStore首发！</span>
+									<!--  <span class="dayslef" data-day="">
+									<span></span>
+									天
+								</span>
+								-->
+								</a>
+							<p>
+								<span class="like ilikeSet" id="ilike_694" data-ilike="694">
+									<a id="NIE-ilike-694" class="NIE-ilike NIE-ilike-style2">
+										<em class="NIE-ilike-num" title="194">194</em>
+										人赞过
+									</a>
+								</span>
+							</p>
+						</div>
+						<div class="carouse-con">
+							<div class="car-bg-img" style="background-image: url(images/small_1);"></div>
+							<a href="#" target="_blank" class="jk_btn" id="jk_507469">
+								<em class="bg-font f-turn"></em>
+								<em class="bg-font-top f-turn"></em>
+								<span class="txt1">功夫熊猫官方手游来了！</span>
+								<span class="txt2">引领好莱坞2.0时代，动作手游新王者！今日全平台公测！</span>
+								<!--  <span class="dayslef" data-day="">
+								<span></span>
+								天
+							</span>
+							-->
+						</a>
+						<p>
+							<span class="like ilikeSet" id="ilike_657" data-ilike="657">
+								<a id="NIE-ilike-657" class="NIE-ilike NIE-ilike-style2">
+									<em class="NIE-ilike-num" title="673">673</em>
+									人赞过
+								</a>
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="carouse-box" style="left:0px">
+					<div class="carouse-con">
+						<div class="car-bg-img" style="background-image: url(images/small_2);"></div>
+						<a href="ppm/ppm.html" target="_blank" class="jk_btn" id="jk_507469">
+							<em class="bg-font f-turn"></em>
+							<em class="bg-font-top f-turn"></em>
+							<span class="txt1">“消完摇一摇”创新泡泡龙消除手游</span>
+							<span class="txt2">网易创新体感泡泡龙消除类手游，独创“消完摇一摇”玩法。</span>
+							 <span class="dayslef" data-day=""></span>
+							<span></span>
+
+						</span>
+
+					</a>
+					<p>
+						<span class="like ilikeSet" id="ilike_663" data-ilike="663">
+							<a id="NIE-ilike-663" class="NIE-ilike NIE-ilike-style2">
+								<em class="NIE-ilike-num" title="133">133</em>
+								人赞过
+							</a>
+						</span>
+					</p>
+				</div>
+				<div class="carouse-con">
+					<div class="car-bg-img" style="background-image: url(images/small_);"></div>
+					<a href="#" target="_blank" class="jk_btn" id="jk_507469">
+						<em class="bg-font f-turn"></em>
+						<em class="bg-font-top f-turn"></em>
+						<span class="txt1">《突击英雄》今日革新内测</span>
+						<span class="txt2">网易革新全英雄射击网游，射击新模式，MOBA大战场！</span>
+						<!-- <span class="dayslef" data-day="">
+						<span></span>
+						天
+					</span>
+					-->
+				</a>
+				<p>
+					<span class="like ilikeSet" id="ilike_660" data-ilike="660">
+						<a id="NIE-ilike-660" class="NIE-ilike NIE-ilike-style2">
+							<em class="NIE-ilike-num" title="232">232</em>
+							人赞过
+						</a>
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="g-listBox mod-box1">
+	<a href="#" class="morenews"></a>
+	<div class="g-newBox">
+		<a href="#" class="hot-news">2015大厂黑马之作《圣灵Zero》  12月1日全平台公测</a>
+		<div class="newBox">
+			<ul class="newsBoxlist">
+				<li>
+					<a href="#">吴蜀联盟的另一种结局 《率土之滨》同盟战争畅想</a>
+					<span>12-01</span>
+				</li>
+				<li>
+					<a href="#">网易动作卡牌《圣灵Zero》今日App Store首发</a>
+					<span>11-27</span>
+				</li>
+				<li>
+					<a href="#">功夫熊猫官方手游今日全平台公测</a>
+					<span>11-26</span>
+				</li>
+				<li>
+					<a href="#">金翎奖最佳原创《功夫熊猫》官方手游今日App Store首发</a>
+					<span>11-20</span>
+				</li>
+				<li>
+					<a href="#">《斩魂》手游今日开启封测</a>
+					<span>11-17</span>
+				</li>
+				<li>
+					<a href="#">百万诸侯开启联盟大战 《率土之滨》全新版本首曝</a>
+					<span>12-01</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- 主体开始 -->
+<div class="con-wrap con-wrap2">
+<div id="mobileGameHot" class="con-box f-cb g-hotBox">
+<p class="con-box-title">
+	热点手游
+	<a href="javascript:;" class="reload">
+		换一批
+		<i></i>
+	</a>
+</p>
+<div class="g-hot-all">
+	<div class="g-hot-wrap active">
+		<div class="cur-hot-box cur" style="display:block">
+			<div class="hot-box">
+				<a href="#" class="hot-link">
+					<img src="images/176_0" alt="" class="hot-bg-img">
+					<div class="hot-font f-turn">
+						<div class="bg"></div>
+						<div class="con">
+							<img src="#" alt="" class="font-qr">
+							<div class="txt">
+								<p class="kind">游戏类型</p>
+								<span>动作卡牌</span>
+								<p class="score">
+									玩家评分
+									<span>
+										<em style="width:100%"></em>
+									</span>
+								</p>
+								<p class="down-num">30万下载</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<p class="hot-title" >《圣灵zero》</p>
+				<p class="hot-txt">网易创新弹射动作卡牌《圣灵zero》，一款拥有创新手势操作的手游，在这里你可以征选多次元英雄进行战斗！</p>
+				<span class="hot-like ilikeSet" id="ilike_695">
+					<a id="NIE-ilike-695" class="NIE-like NIE-ilike-style2">
+						<em class="NIE-ilike-num">147</em>
+						人赞过
+					</a>
+				</span>
+				<a href="#" class="gw-link">进入官网</a>
+			</div>
+			<div class="hot-box">
+				<a href="#" class="hot-link">
+					<img src="images/176_4" alt="" class="hot-bg-img">
+					<div class="hot-font f-turn">
+						<div class="bg"></div>
+						<div class="con">
+							<img src="#" alt="" class="font-qr">
+							<div class="txt">
+								<p class="kind">游戏类型</p>
+								<span>动作卡牌</span>
+								<p class="score">
+									玩家评分
+									<span>
+										<em style="width:100%"></em>
+									</span>
+								</p>
+								<p class="down-num">30万下载</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<p class="hot-title" >《率土之滨》</p>
+				<p class="hot-txt">实时多人战略手游《率土之滨》公测引爆全平台</p>
+				<span class="hot-like ilikeSet" id="ilike_695">
+					<a id="NIE-ilike-695" class="NIE-like NIE-ilike-style2">
+						<em class="NIE-ilike-num">147</em>
+						人赞过
+					</a>
+				</span>
+				<a href="#" class="gw-link">进入官网</a>
+			</div>
+			<div class="hot-box">
+				<a href="#" class="hot-link">
+					<img src="images/176_5" alt="" class="hot-bg-img">
+					<div class="hot-font f-turn">
+						<div class="bg"></div>
+						<div class="con">
+							<img src="#" alt="" class="font-qr">
+							<div class="txt">
+								<p class="kind">游戏类型</p>
+								<span>动作卡牌</span>
+								<p class="score">
+									玩家评分
+									<span>
+										<em style="width:100%"></em>
+									</span>
+								</p>
+								<p class="down-num">30万下载</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<p class="hot-title" >《石头给我滚》</p>
+				<p class="hot-txt">App Store今日首发，碾平！发泄吧！</p>
+				<span class="hot-like ilikeSet" id="ilike_695">
+					<a id="NIE-ilike-695" class="NIE-like NIE-ilike-style2">
+						<em class="NIE-ilike-num">147</em>
+						人赞过
+					</a>
+				</span>
+				<a href="#" class="gw-link">进入官网</a>
+			</div>
+		</div>
+		<div class="cur-hot-box"></div>
+		<div class="cur-hot-box"></div>
+		<div class="cur-hot-box"></div>
+		<div class="cur-hot-box"></div>
+		<div class="cur-hot-box"></div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="con-wrap con-wrap3">
+<div class="con-box f-cb con-nav">
+<!--2015版本游戏列表 Start 2015-04-28-->
+<div class="nav-box-con nav-box-con1 f-cb">
+	<h2 class="nav-box-title">
+		<em>客户端游戏</em>
+	</h2>
+	<div class="nav-li-box nav-li-box1 f-cb">
+		<h2>角色扮演</h2>
+		<ul>
+			<li>
+				<a target="_blank" href="http://xyq.163.com/">
+					梦幻西游2
+					<img alt="梦幻西游2" src="	http://img.nie.163.com/images/2015/4/28/2015-04-28_577043.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://tx3.163.com/">
+					天下3
+					<img alt="天下3" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577063.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xy2.163.com/">
+					新大话西游2
+					<img alt="新大话西游2" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577045.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://ty.163.com/">
+					天谕
+					<img alt="天谕" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577061.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://dh2.163.com/">
+					大话2免费版
+					<img alt="大话2免费版" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577047.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://bw.163.com/">
+					西楚霸王
+					<img alt="西楚霸王" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577081.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://xy3.163.com/">
+					新大话3经典版
+					<img alt="新大话3经典版" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577049.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xqn.163.com/">
+					新倩女幽魂
+					<img alt="新倩女幽魂" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577071.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://x3.163.com/">
+					新大话3免费版
+					<img alt="新大话3免费版" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577051.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zmq.163.com/">
+					镇魔曲
+					<img alt="镇魔曲" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577057.jpg"></a>
+			</li>
+
+			<li>
+				<a target="_blank" href="http://dtws2.163.com/">
+					大唐无双零
+					<img alt="大唐无双零" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577055.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://lj.163.com/">
+					龙剑
+					<img alt="龙剑" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577059.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://wh.163.com/">
+					武魂2
+					<img alt="武魂2" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577065.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://jl.163.com/">
+					精灵传说
+					<img alt="精灵传说" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577079.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zh.163.com/">
+					斩魂
+					<img alt="斩魂" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577069.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ff.163.com/">
+					新飞飞
+					<img alt="新飞飞" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577075.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://www.battlenet.com.cn/wow/">
+					魔兽世界
+					<img alt="魔兽世界" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577073.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://www.diablo3.com.cn/">
+					暗黑破坏神3
+					<img alt="暗黑破坏神3" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577113.jpg"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="nav-li-box nav-li-box2 f-cb">
+		<h2>竞技/休闲</h2>
+		<ul>
+			<li>
+				<a target="_blank" href="http://tuji.163.com/">
+					突击英雄
+					<img alt="突击英雄" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577095.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://db.163.com/">
+					夺宝联盟
+					<img alt="夺宝联盟" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577109.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://wxdj.163.com/">
+					无尽战区
+					<img alt="无尽战区" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577107.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://www.heroesofthestorm.com.cn/">
+					风暴英雄
+					<img alt="风暴英雄" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577101.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://sc2.163.com/home">
+					星际争霸II
+					<img alt="星际争霸II" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577103.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://y3.163.com/">
+					英雄三国
+					<img alt="英雄三国" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577105.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://www.hearthstone.com.cn/">
+					炉石传说
+					<img alt="炉石传说" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577087.jpg"></a>
+			</li>
+
+		</ul>
+	</div>
+</div>
+<div class="nav-box-con nav-box-con2 f-cb">
+	<h2 class="nav-box-title">
+		<em>手机游戏</em>
+	</h2>
+	<div class="nav-li-box nav-li-box3 f-cb">
+		<h2>热门推荐</h2>
+		<ul>
+			<li>
+				<a target="_blank" href="http://my.163.com/">
+					梦幻西游手游
+					<img alt="梦幻西游" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576983.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://dhxy.163.com/">
+					大话西游手游
+					<img alt="大话西游手游" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576985.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://ldxy.163.com/">
+					乱斗西游2
+					<img alt="乱斗西游2" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576989.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://gfxm.163.com/">
+					功夫熊猫官方手游
+					<img alt="功夫熊猫官方手游" src="http://img.nie.163.com/images/2015/9/14/2015-09-14_656361.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+
+			<li>
+				<a target="_blank" href="http://txhd.163.com/">
+					天下HD
+					<img alt="天下HD" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577005.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://cb.163.com/">
+					时空之刃
+					<img alt="时空之刃" src="http://img.nie.163.com/images/2015/5/22/2015-05-22_589719.jpg"></a>
+				<em class="icon-H"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://mxxc.163.com/">
+					梦想星城
+					<img alt="梦想星城" src="http://res.nie.netease.com/r/pic/20151120/a67f7d1a-19c9-4127-9b20-9499528fad29"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://bjx.163.com/">
+					百将行
+					<img alt="百将行" src="http://img.nie.163.com/images/2015/5/28/2015-05-28_592387.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://sq.163.com/">
+					有杀气童话
+					<img alt="有杀气童话" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577029.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ma.163.com/">
+					乖离性百万亚瑟王
+					<img alt="乖离性百万亚瑟王" src="http://img.nie.163.com/images/2015/7/2/2015-07-02_609579.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xsd.163.com/">
+					小时代官方游戏
+					<img alt="小时代官方游戏" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577025.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://mtj.163.com/">
+					魔天记
+					<img alt="魔天记" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577021.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://sm.163.com/">
+					西游神魔决
+					<img alt="西游神魔决" src="http://res.nie.netease.com/r/pic/20151120/12d08606-ad6c-4136-8762-89bed3d0fb49"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://fsqq.163.com/">
+					碎碎曲奇
+					<img alt="碎碎曲奇" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577033.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zgmh.163.com/">
+					主公莫慌
+					<img alt="主公莫慌" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577007.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://wscs.163.com/">
+					实况俱乐部
+					<img alt="实况俱乐部" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577001.jpg"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="nav-li-box nav-li-box4 f-cb">
+		<h2>新品推荐</h2>
+		<ul style="width:576px;">
+			<li>
+				<a target="_blank" href="http://raven.163.com/">
+					Raven：掠夺者
+					<img alt="Raven：掠夺者" src="http://img.nie.163.com/images/2015/7/23/2015-07-23_622085.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://txx.163.com/">
+					天下X天下
+					<img alt="天下X天下" src="http://img.nie.163.com/images/2015/6/15/2015-06-15_601159.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://qnm.163.com/">
+					倩女幽魂
+					<img alt="倩女幽魂" src="http://res.nie.netease.com/r/pic/20151028/698d88f7-1930-4c25-92cb-6375af325c5d"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://kf.163.com/">
+					功夫熊猫3手游
+					<img alt="功夫熊猫3手游" src="http://img.nie.163.com/images/2015/9/24/2015-09-24_663935.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+
+			<li>
+				<a target="_blank" href="http://tnj.163.com/">
+					猫和老鼠官方手游
+					<img alt="猫和老鼠官方手游" src="http://img.nie.163.com/images/2015/5/12/2015-05-12_584129.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://gf.163.com/">
+					功夫熊猫系列
+					<img alt="功夫熊猫系列" src="http://img.nie.163.com/images/2015/5/25/2015-05-25_590973.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://cake.163.com/">
+					蛋糕物语
+					<img alt="蛋糕物语" src="http://img.nie.163.com/images/2015/6/5/2015-06-05_596365.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://hyy.163.com/">
+					花语月
+					<img alt="花语月" src="http://res.nie.netease.com//r/pic/20150930/c2ac99ad-7b5c-4935-a8fc-1c4d460ae418"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://jm.163.com/">
+					惊梦
+					<img alt="惊梦" src="http://res.nie.netease.com/r/pic/20151021/f910a6cd-976b-4eb4-b0cb-bef5d08ba860"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://stzb.163.com/">
+					率土之滨
+					<img alt="率土之滨" src="http://img.nie.163.com/images/2015/7/3/2015-07-03_610451.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://jianglin.163.com/">
+					将临天下
+					<img alt="将临天下" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577041.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://doombad.163.com/">
+					邪恶古堡
+					<img alt="邪恶古堡" src="http://img.nie.163.com/images/2015/5/28/2015-05-28_592385.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://mtxy.163.com/">
+					魔塔学院
+					<img alt="魔塔学院" src="http://img.nie.163.com/images/2015/7/22/2015-07-22_621581.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://smj.163.com/">
+					神魔劫
+					<img alt="神魔劫" src="http://img.nie.163.com/images/2015/8/20/2015-08-20_641015.jpg"></a>
+				<em class="icon-N"></em>
+			</li>
+			<li>
+				<a target="_blank" href="http://hxjt.163.com/">
+					幻想军团
+					<img alt="幻想军团" src="http://img.nie.163.com/images/2015/9/24/2015-09-24_663931.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zlj.163.com/">
+					口袋侏罗纪
+					<img alt="口袋侏罗纪" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577023.jpg"></a>
+			</li>
+
+			<li>
+				<a target="_blank" href="http://hzhy.163.com/">
+					魂之幻影
+					<img alt="魂之幻影" src="http://res.nie.netease.com/r/pic/20150928/229cb457-5011-4b1e-b340-6feae9bb214e"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://gfxm1.163.com/">
+					功夫熊猫序篇
+					<img alt="功夫熊猫序篇" src="http://img.nie.163.com/images/2015/5/25/2015-05-25_590973.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xym.163.com/">
+					迷你西游
+					<img alt="迷你西游" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576987.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://kxd.163.com/">
+					千岛物语
+					<img alt="千岛物语" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576991.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://too.163.com/">
+					塔防骑士团
+					<img alt="塔防骑士团" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576993.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://rz.163.com/">
+					忍者必须死2
+					<img alt="忍者必须死2" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576995.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://yzr.163.com/">
+					雨血：影之刃
+					<img alt="雨血：影之刃" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576997.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://em.163.com/">
+					恶魔不要啊
+					<img alt="恶魔不要啊" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_576999.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zzz.163.com/">
+					一起追追追
+					<img alt="一起追追追" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577003.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://yj.163.com/">
+					妖精笔记
+					<img alt="妖精笔记" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577009.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xxd.163.com/">
+					一起消消毒
+					<img alt="一起消消毒" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577011.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://tjl.163.com/">
+					猎魔通缉令
+					<img alt="猎魔通缉令" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577015.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://tfmz.163.com/">
+					塔防萌主
+					<img alt="塔防萌主" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577017.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xyf.163.com/">
+					方块西游
+					<img alt="方块西游" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577019.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://dpsg.163.com/">
+					大牌三国
+					<img alt="大牌三国" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577027.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://yhl.163.com/">
+					倩女幽魂录
+					<img alt="倩女幽魂录" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577035.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://f1racestars.163.com/">
+					F1 RACE STARS
+					<img alt="F1 RACE STARS" src="http://img.nie.163.com/images/2015/4/28/2015-04-28_577039.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ttxy.163.com/">
+					塔塔西游
+					<img alt="塔塔西游" src="http://img.nie.163.com/images/2015/5/11/2015-05-11_583857.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://cs.163.com/">
+					城堡风暴
+					<img alt="城堡风暴" src="http://img.nie.163.com/images/2015/7/7/2015-07-07_611857.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://fk.163.com/">
+					方块精灵
+					<img alt="方块精灵" src="http://img.nie.163.com/images/2015/7/9/2015-07-09_613347.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://jd.163.com/">
+					绝地战警
+					<img alt="绝地战警" src="http://img.nie.163.com/images/2015/7/10/2015-07-10_614387.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://jlhx.163.com/">
+					精灵幻想
+					<img alt="精灵幻想" src="http://img.nie.163.com/images/2015/7/22/2015-07-22_621579.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://xfq.163.com/">
+					音速小粉拳
+					<img alt="音速小粉拳" src="http://img.nie.163.com/images/2015/7/24/2015-07-24_622849.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://dwlm.163.com/">
+					超能动物联盟
+					<img alt="超能动物联盟" src="http://img.nie.163.com/images/2015/7/27/2015-07-27_624337.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://gzbnl.163.com/">
+					公主别闹了
+					<img alt="公主别闹了" src="http://img.nie.163.com/images/2015/8/3/2015-08-03_630263.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://nyj.163.com/">
+					十万个女妖精
+					<img alt="十万个女妖精" src="http://img.nie.163.com/images/2015/8/5/2015-08-05_631805.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://mrgj.163.com/">
+					末日孤舰
+					<img alt="末日孤舰" src="http://img.nie.163.com/images/2015/8/17/2015-08-17_638449.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://sakura.163.com/">
+					落樱散华抄
+					<img alt="落樱散华抄" src="http://img.nie.163.com/images/2015/8/20/2015-08-20_641405.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://bh.163.com/">
+					冰火军团
+					<img alt="冰火军团" src="http://img.nie.163.com/images/2015/8/27/2015-08-27_645627.png"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://lzxxdn.163.com/">
+					来自星星的你
+					<img alt="来自星星的你" src="http://img.nie.163.com/images/2015/9/14/2015-09-14_656363.png"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://dc.163.com/">
+					貂蝉的移动城堡
+					<img alt="貂蝉的移动城堡" src="http://img.nie.163.com/images/2015/9/22/2015-09-22_661563.jpg"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://jshm.163.com/">
+					军师很忙
+					<img alt="军师很忙" src="http://res.nie.netease.com/r/pic/20150928/627517c2-c38e-4ec0-8ed0-0f3402e1490d"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://mhws.163.com/">
+					梦幻西游无双版
+					<img alt="梦幻西游无双版" src="http://res.nie.netease.com/r/pic/20151008/36faedda-1bb1-4d9d-aa8f-14ce2ccc48ac"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://mgzz.163.com/">
+					蘑菇战争
+					<img alt="蘑菇战争" src="http://res.nie.netease.com/r/pic/20151008/d8b127be-4110-4ca3-922d-fc2172afa6cd"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://qybt.163.com/">
+					契约兵团
+					<img alt="契约兵团" src="http://res.nie.netease.com/r/pic/20150929/d4ad9779-0679-4561-a894-048c5d1fed1d"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ddlm.163.com/">
+					捣蛋连萌
+					<img alt="捣蛋连萌" src="http://res.nie.netease.com/r/pic/20151012/994fbca5-00aa-4ac8-943a-8268f9603ae8"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://stone.163.com/">
+					石头给我滚
+					<img alt="石头给我滚" src="http://res.nie.netease.com/r/pic/20151015/4e48a186-75e5-440a-8c40-a59567b5d690"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://mmx.163.com/">
+					火拼萌萌消
+					<img alt="火拼萌萌消" src="http://res.nie.netease.com/r/pic/20151019/5ca174ba-913a-47f3-b3ff-c9380f08ae20"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://boss.163.com/">
+					无限上司
+					<img alt="火拼萌萌消" src="http://res.nie.netease.com/r/pic/20151030/d8fb69bb-719e-42ab-ad29-86b820abc476"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://zh.163.com/boot.html">
+					斩魂手游版
+					<img alt="斩魂手游版" src="http://res.nie.netease.com/r/pic/20151102/6f9893c5-8110-48b7-af42-e39ebefe4e5b"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://sgfyz.163.com/">
+					三国风云传
+					<img alt="三国风云传" src="http://res.nie.netease.com/r/pic/20151102/93de7241-92c9-4b6c-a4f8-5093502c745b"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ppm.163.com/">
+					泡泡喵海岛历险
+					<img alt="泡泡喵海岛历险" src="http://res.nie.netease.com/r/pic/20151124/c936802b-67fe-419b-881b-c913609d90d5"></a>
+			</li>
+			<li>
+				<a target="_blank" href="http://ydh.163.com/">
+					懒宅运动会
+					<img alt="懒宅运动会" src="http://res.nie.netease.com/r/pic/20151126/cb0b87f7-287e-47df-bb1f-36a56551b121"></a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+<!--2015版本游戏列表 End 2015-04-28-->
+</div>
+<div class="nav-change-box f-cb">
+<a id="fisChange" href="javascript:;" class="fis-style cur">
+	<i></i>
+</a>
+<a id="sedChange" href="javascript:;" class="sed-style">
+	<i></i>
+</a>
+</div>
+<div class="cha-list">
+<span>
+	<i class="icon-H"></i>
+	热门游戏
+</span>
+<span>
+	<i class="icon-N"></i>
+	最新游戏
+</span>
+</div>
+</div>
+
+<div class="con-wrap con-wrap4">
+				<div class="con-box center-box clearfix">
+					<a href="javascirpt:;" class="center-show">
+						<em class="show-bg show-bg1"></em>
+						<em class="font1"></em>
+						<em class="font2"></em>
+						<span>网易游戏App<br />我的超能死党</span>
+					</a>
+					<a href="javascirpt:;" class="center-show">
+						<em class="show-bg show-bg2"></em>
+						<em class="font1"></em>
+						<em class="font2"></em>
+						<span>游戏热爱者<br />网易游戏年度大片</span>
+					</a>
+					<a href="javascirpt:;" class="center-show">
+						<em class="show-bg show-bg3"></em>
+						<em class="font1"></em>
+						<em class="font2"></em>
+						<span>游戏热爱者的节目终于来了！<br />520游戏热爱日</span>
+					</a>
+					<a href="javascirpt:;" class="center-show">
+						<em class="show-bg show-bg4"></em>
+						<em class="font1"></em>
+						<em class="font2"></em>
+						<span>网易游戏八字箴言<br />诠释指尖上的热爱</span>
+					</a>
+				</div>
+			</div>
+			<div class="con-wrap con-wrap5">
+				<div class="con-box g-hot-box">
+					<div class="con-box-title">
+						<p>
+							游戏热点<a href="javascript:;" class="a-link-">游戏视频</a>  .
+							<a href="javascript:;">玩家热议</a>
+						</p>
+						<p class="toggleLoad">
+							换一批
+							<i></i>
+						</p>
+					</div>
+					<div class="g-hot-all">
+						<div class="a-hot-wrap active">
+							<div class="cur-hot-box cur">
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第1组/52200590-c31b-4fd8-abad-52009b400ed8.jpg" alt="《圣灵zero》" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">《圣灵zero》</h3>
+									<p class="hot-txt">网易创新弹射动作卡牌《圣灵zero》，一款拥有创新手势操作的手游，在这里你可以征选多次元英雄进行战斗！</p>
+									<span class="hot-like hot-like-em1"><a href="#"><em title="29">29</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第1组/2c90ccce-0779-4ea0-b4b2-938884b813cc.jpg" alt="突击英雄千万CG首发" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">突击英雄千万CG首发</h3>
+									<p class="hot-txt">网易革新全英雄射击网游《突击英雄》11月20日革新内测。</p>
+									<span class="hot-like"><a href="#" ><em title="97">97</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第1组/9f2c1fa2-c8a1-4eb0-ab9b-06606b905647.jpg" alt="功夫熊猫官方手游来了！" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">功夫熊猫官方手游来了！</h3>
+									<p class="hot-txt">引领好莱坞2.0时代，动作手游新王者！今日全平台公测！</p>
+									<span class="hot-like"><a href="#"><em title="42">42</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+							</div>
+							<div class="cur-hot-box">
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第2组/d95562a7-64a0-4d64-96b2-4be54df19140.jpg" alt="《时空之刃》邹市明千万级震撼TVC" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">《时空之刃》邹市明千万级震撼TVC</h3>
+									<p class="hot-txt">今日全平台首发</p>
+									<span class="hot-like hot-like-em1"><a href="#"><em title="29">29</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第2组/d3431cfe-5b4c-4c26-8b3c-8c8ea7ee3a34.jpg" alt="《萌神战记》" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">《萌神战记》</h3>
+									<p class="hot-txt">《萌神战记》是网易游戏出品的一款新锐RPG动作手游，今日公测！</p>
+									<span class="hot-like"><a href="#" ><em title="97">97</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/游戏视频/第2组/f3c30d0d-5df8-44d0-ba7e-81bb439ae94e.jpg" alt="《梦想星城：来自星星的你特别版》" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">《梦想星城：来自星星的你特别版》</h3>
+									<p class="hot-txt">今日全平台公测</p>
+									<span class="hot-like"><a href="#"><em title="42">42</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+							</div>
+							<div class="cur-hot-box"></div>
+						</div>
+						<div class="a-hot-wrap">
+							<div class="cur-hot-box cur">
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/玩家热议/第1组/2015-07-08_612341.png" alt="【脑洞漫画】吓得小红帽镰刀都掉了" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">【脑洞漫画】吓得小红帽镰刀都掉了</h3>
+									<p class="hot-txt">一个非常醒神的《杀气小红帽》！</p>
+									<span class="hot-like hot-like-em1"><a href="#"><em title="29">29</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/玩家热议/第1组/2015-05-20_587955.jpg" alt="网易游戏热爱者日记：财报一则" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">网易游戏热爱者日记：财报一则</h3>
+									<p class="hot-txt">前些天朋友圈被各种Q1财报刷屏了。今天……</p>
+									<span class="hot-like"><a href="#" ><em title="97">97</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+								<div class="hot-box">
+									<a href="javascript:;" class="hot-link">
+										<img class="hot-bg-img" src="images/玩家热议/第1组/2015-05-15_586559.jpg" alt="网易游戏热爱者日记：公益篇" />
+										<i></i>
+									</a>
+									<h3 class="hot-title">网易游戏热爱者日记：公益篇</h3>
+									<p class="hot-txt">不是学长大哥不懂得怜惜小朋友。身处那种地方…</p>
+									<span class="hot-like"><a href="#"><em title="42">42</em>人赞过</a></span>
+									<a href="javascript:;" class="gw-link">查看详情</a>
+								</div>
+							</div>
+							<div class="cur-hot-box"></div>
+							<div class="cur-hot-box"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="con-wrap con-wrap6">
+				<div class="con-box f-sb">
+					<div class="clearfix" style="overflow: hidden;">
+						<div class="con-li-link con-li-link1">
+						<p>游戏助手<i></i></p>
+						<div class="con-li-lis con-li-lis1">
+							<a href="#"><span class="text1">网易手游达人</span><br /><span>达人特权，不容错过</span></a>
+							<a href="#"><span>网易游戏APP</span><br /><span>网易官方游戏中心</span></a>
+						</div>
+					</div>
+						<div class="con-li-link con-li-link2">
+						<p>充值购卡<i></i></p>
+						<div class="con-li-lis con-li-lis2">
+							<a href="#"><span>充值服务</span><br /><span>安全，多样，快捷</span></a>
+							<a href="#"><span>在线购卡</span><br /><span>在线支付，即时使用</span></a>
+							<a href="#"><span>藏宝阁</span><br /><span>游戏道具交易系统</span></a>
+							<a href="#"><span>网易游戏印象</span><br /><span>网易周边，官方正品</span></a>
+						</div>
+					</div>
+						<div class="con-li-link con-li-link3">
+						<p>安全保障<i></i></p>
+						<div class="con-li-lis con-li-lis3">
+							<a href="#"><span>手机将军令</span><br /><span>帐号安全，一手掌握</span></a>
+							<a href="#"><span>举报中心</span><br /><span>中国网络游戏版权联盟</span></a>
+						</div>
+					</div>
+						<div class="con-li-link con-li-link4">
+						<p>辅助工具<i></i></p>
+						<div class="con-li-lis con-li-lis4">
+							<a href="#"><span>梦幻手游百科</span><br /><span>梦幻手游精品资料攻略</span></a>
+							<a href="#"><span>UU加速器</span><br /><span>让您的游戏更顺畅</span></a>
+							<a href="#"><span>CC语音</span><br /><span>沟通无阻，畅玩游戏</span></a>
+							<a href="#"><span>游戏百科</span><br /><span>专业齐全的游戏知识</span></a>
+							<a href="#"><span>高校联盟</span><br /><span>社团活动扶持基地</span></a>
+							<a href="#"><span>游戏推广员</span><br /><span>参与推广，获游戏大奖</span></a>
+							<a href="#"><span>网易VIP网吧</span><br /><span>享特权，领奖励</span></a>
+							<a href="#"><span>网易ChinaJoy</span><br /><span>热爱有你，我们的红色主场</span></a>
+						</div>
+					</div>
+					</div>
+					<div class="con-wrap6-text clearfix">
+						<div class="wrap6-text-l">
+							<span>客户服务</span> &gt;
+							<a href="#">GM服务</a> |
+							<a href="#">帐号修复</a> |
+							<a href="#">更改密码</a> |
+							<a href="#">手机验证特权</a> |
+							<a href="#">游戏知道</a> |
+							<a href="#">密保中心</a> |
+							<a href="#">自助百宝箱</a> |
+							<span class="wrap6-text-sp2">客户电话</span> &gt;
+							<span>020-83918160</span>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+
+<!-- 顶部nav 结束 -->
+<div class="footer">
+			<div class="copyRight">
+				<div class="footer-top">
+					<div class="footer-bg">
+						<a href="#"><img src="images/netease.2.png" alt="" /></a>
+						<a href="#"><img src="images/nie.2.png" alt="" /></a>
+						<a href="#"><img src="images/wen.png" alt="" /></a>
+					</div>
+					<div class="footer-text">
+						<p>
+							<a href="#">公司简介</a> -
+							<a href="#">客户服务</a> -
+							<a href="#">相关法律</a> -
+							<a href="#">网易游戏</a> -
+							<a href="#">联系我们</a> -
+							<a href="#">商务合作</a> -
+							<a href="#">加入我们</a>
+						</p>
+						<p style="color: #fff;">
+							网易公司版权所有 ©1997-2015　　
+							<a href="#" style="color: #fff;">中国网络游戏版权保护联盟举报中心</a>
+						</p>
+					</div>
+				</div>
+				<p class="footer-copy">全国文化市场统一举报电话：12318　文化部网络游戏举报和联系电子邮箱：<a href="#" style="color: #fff;">wlwh@vip.sina.com</a> <br />
+《网络文化经营许可证》粤网文[2014]0636-236号</p>
+			</div>
+		</div>
+</body>
+</html>
