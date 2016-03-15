@@ -1,0 +1,178 @@
+/*
+* @Author: Qinson
+* @Date:   2016-03-14 20:02:33
+* @Last Modified by:   Qinson
+* @Last Modified time: 2016-03-15 12:00:11
+*/
+// 公共样式
+    textarea { resize:none; } /*防止拖动*/
+    img {border:0;  vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+    table { border-collapse:collapse; }
+    body {
+        font:12px/150% Arial,Verdana,"\5b8b\4f53";
+        color:#666;
+        background:#fff;
+    }
+    .w{
+    width: 1210px;
+    margin:0 auto;
+    }
+    .clearfix:before,.clearfix:after{
+        content:"";
+        display:table;
+    }
+    .clearfix:after{clear:both;}
+    .clearfix{
+        *zoom:1;/*IE/7/6*/
+    }
+    ol,ul{list-style: none;}
+    a{color:#666; text-decoration:none; }
+    a:hover{color:#C81623;}
+    h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;font-size:100%;}
+    s,i,em{font-style:normal;text-decoration:none;}
+    *{margin:0;padding:0;}
+    box-sizing: border-box;
+
+    #fullpage .section1{background-color: #2C3E50;}
+    #fullpage .section2{background-color: #2EBE21;}
+    #fullpage .section3{background-color: #2C3E50;}
+    #fullpage .section4{background-color: #FF9900;}
+    #fullpage .section5{background-color: #2C3E50;}
+    #fullpage .section6{background-color: blue;}
+    #fullpage .section7{background-color: green;}
+    #header{
+        position: fixed;
+        width:100%;
+        height: 138px;
+        font: 14px "微软雅黑";
+    }
+    #header>.header_main{
+        position: relative;
+        height: 100px;
+        border-bottom: 1px solid #e6e6e6;
+        background:white url(../images/header-main.png);
+    }
+    #header>.header_main>.container{
+        // with:100%;
+        height: 75px;
+    }
+
+    .aaaa{
+    width: 1210px;
+    margin:0 auto;
+    background-color: grey;
+    }
+    #header>.header_main>.container>.logo{
+        float: left;
+        width:80px;
+        height: 50px;
+        padding-top: 25px;
+        padding-left: 40px;
+    }
+    #header>.header_main>.container>.logo>h1>a{
+        display:block;
+        width:40px;
+        height: 40px;
+        background: url(../images/logo_jgb.png);
+    }
+    #header>.header_main>.container>.nav{
+        float: left;
+        margin-left: 100px;
+        width:750px;
+        height: 100%;
+        // background-color: pink;
+    }
+    #header .nav ul{
+        display: block;
+        width:100%;
+        height: 100%;
+        padding-left: 25px;
+    }
+    #header .nav li{
+        position: relative;
+        float: left;
+        width:100px;
+        height: 75px;
+        text-align: center;
+        line-height: 75px;
+        cursor: pointer;
+    }
+    #header .nav li ins{
+        position: absolute;
+        top: -75px;
+        left: 0;
+        opacity: .5;
+        width:100%;
+        height: 100%;
+        // z-index: -1;
+    }
+    #header>.header_main>.container>.login{
+        position: relative;
+        float: right;
+        width:200px;
+        height: 100%;
+    }
+    #header .login .container{
+        margin:0 auto;
+        margin-top: 20px;
+        width: 96px;
+        height: 26px;
+        text-align: center;
+        line-height: 26px;
+        border:2px solid #E5E5E5;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    #header .login .container::after{
+        position: absolute;
+        top:24px;
+        left: 0;
+        content: "";
+        display: block;
+        height: 22px;
+        width:2px;
+        background-color: #e5e5e5;
+    }
+
+    #header>.header_sub{
+        position:absolute;
+        left: 0;
+        right: 0;
+        top:100px;
+        height: 38px;
+        border-bottom: 1px solid #E5E5E5;
+    }
+    #header .breadcrumb li{
+        display: block;
+        float: left;
+        height: 38px;
+        width:100px;
+        line-height: 38px;
+        text-align: center;
+        cursor: pointer;
+    }
+    #header .account_wrapper{
+        display: block;
+        float: right;
+        height: 38px;
+        width: 200px;
+    }
+    #header .account_wrapper a{
+        display: block;
+        float: left;
+        width:100px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+        cursor: pointer;
+        font-weight: 400;
+    }
+    #header .account_wrapper a:hover{
+        color:#C81623;
+    }
+    #header .account_wrapper span:nth-child(2) a:hover{
+        background: #ccc;
+        color:#fff;
+        font-weight: 600;
+    }
+    a:hover{color:#fff;}
