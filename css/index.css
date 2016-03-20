@@ -5,10 +5,11 @@ body {
 }
 h1, h2, h3, h4, h5, h6, em, strong, b {
     font-weight: 700;
+
 }
 i, cite, em, var, address, dfn {
     font-style: italic;
-}
+};
 em {
 	font-style: normal;
 }
@@ -149,7 +150,7 @@ a:hover {
 	cursor: pointer;
 }
 .con-wrap5 .con-box-title p:first-child a:hover,
-.con-wrap5 .con-box-title p:first-child a.active 
+.con-wrap5 .con-box-title p:first-child a.active
 {
 	color: #CF1132;
 }
@@ -256,7 +257,7 @@ a:hover {
 }
 .cur-hot-box .hot-box .hot-like:hover a{
 	background-position-y: -30px;
-} 
+}
 .cur-hot-box .hot-box .gw-link {
 	position: absolute;
 	bottom: 20px;
@@ -300,13 +301,13 @@ a:hover {
 	width: 152px;
 }
 .con-wrap6 .con-li-link2 {
-	width: 304px;	
+	width: 304px;
 }
 .con-wrap6 .con-li-link3 {
-	width: 152px;	
+	width: 152px;
 }
 .con-wrap6 .con-li-link4 {
-	width: 608px;	
+	width: 608px;
 	margin-right: 0;
 }
 .con-li-link .con-li-lis {
@@ -341,13 +342,13 @@ a:hover {
 .con-li-link .con-li-lis a span:last-child {
 	font-size: 12px;
 	line-height: 30px;
-	color: #838080;	
+	color: #838080;
 }
 
 /*============================  客户服务  ============================*/
 .con-wrap6 .con-wrap6-text {
 	padding-top: 30px;
-	font-size: 12px;    
+	font-size: 12px;
 	color: #d9dde1;
 	line-height: 22px;
 }
@@ -377,6 +378,8 @@ a:hover {
 	padding: 20px 0;
 	background: #272a2c;
 	color: #fff;
+	min-width: 1260px;
+	max-width: 1920px;
 }
 .footer .copyRight {
 	padding-top: 15px;
@@ -421,7 +424,7 @@ a:hover {
 	color: #fff;
 	padding-top: 10px;
 }
- 
+
 
 
 

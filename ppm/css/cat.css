@@ -537,6 +537,7 @@ body{font-family:"Arial", "微软雅黑", "宋体";}
     margin-left: -100px;
     height: 908px;
     background: url("../images/cat_b5b3fc0.png") no-repeat;
+    background-size: 100% auto;
     animation:change 2s infinite;
 }
 @keyframes change {

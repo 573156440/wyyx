@@ -1,7 +1,7 @@
 /**
- * Created by Qinson on 2015/12/1.
+ * Created by 573156440 on 2015/12/1.
+ * 13839796596
  */
-
 $(document).ready(function() {
     // 网易游戏全目录
     (function() {
@@ -65,7 +65,7 @@ $(document).ready(function() {
             var cc = "images/newsH" + (index) + ".png";
 
             $(ele).on("mouseenter", function(event) {
-                    console.log($(this).index())
+                    // console.log($(this).index())
                     $(this).addClass("current").siblings().removeClass("current").end()
                         .children("i").css("background-image", "url(" + cc + ")").end()
 
@@ -74,7 +74,7 @@ $(document).ready(function() {
                 //改变当前i标签的背景图
         })
         $(".cat").on("mouseenter", function(event) {
-            console.log("为了阻止事件冒泡");
+            // console.log("为了阻止事件冒泡");
             event.stopPropagation();
         })
     }());
@@ -114,16 +114,15 @@ $(document).ready(function() {
             }
         }
                 //banner控制钮
-        var timer1 = setInterval(aa, 2000)
+        var timer = setInterval(aa, 2000)
         $("#switch_ctrl span").each(function(i, e) {
             //console.log(i)
             $(this).on("mouseenter", function() {
-                clearInterval(timer1);
+                clearInterval(timer);
                 $(".banner_wrap>a").hide().eq(i).show();
             }).on("mouseout", function() {
-                timer1 = setInterval(aa, 2000);
+                timer = setInterval(aa, 2000);
             })
-
         });
     }());
     //分享到背景精灵图自动生成
@@ -135,12 +134,11 @@ $(document).ready(function() {
     //考拉海购 秀品商城 切换
     (function() {
         $('#klhg').hide(0);
-        var timer3 = setInterval(function() {
+        var timer = setInterval(function() {
             $("#topBar_right>div").hide().eq(0).slideDown(1000);
             setTimeout(function() {
                 $("#topBar_right>div").hide().eq(1).slideDown(1000);
             }, 3000)
-            console.log(index);
         }, 6000)
     }());
 
