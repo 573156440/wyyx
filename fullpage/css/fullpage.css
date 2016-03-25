@@ -1,15 +1,15 @@
 /*
 * @Author: Qinson
 * @Date:   2016-03-14 20:02:33
-* @Last Modified by:   Qinson
-* @Last Modified time: 2016-03-15 12:00:11
+* @Last Modified by:   573156440
+* @Last Modified time: 2016-03-25 19:04:42
 */
 // 公共样式
     textarea { resize:none; } /*防止拖动*/
     img {border:0;  vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
     table { border-collapse:collapse; }
     body {
-        font:12px/150% Arial,Verdana,"\5b8b\4f53";
+        font:10px/150% Arial,Verdana,"\5b8b\4f53";
         color:#666;
         background:#fff;
     }
@@ -176,3 +176,30 @@
         font-weight: 600;
     }
     a:hover{color:#fff;}
+
+
+    /* 第三屏 */
+    #allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        in:0;font-family:"微软雅黑";
+    }
+    #BMap_left{
+        float:left;
+        width: 20%;
+        height: 100%;
+        color:#f40;
+    }
+    #BMap_left h2{
+        font-size:3rem;
+        line-height: 150%;
+
+    }
+    #allmap{
+        float:left;
+        width: 80%;
+        height: 100%;
+    }
+
+
